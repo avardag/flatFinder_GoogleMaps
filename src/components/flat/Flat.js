@@ -3,16 +3,18 @@ import "./Flat.css"
 
 
 export default class Flat extends Component {
-  
+  handleFlatClick = ()=>{
+    this.props.selectFlat(this.props.flat)
+  }
   render() {
-    const {currency, price, name, imageUrl} = this.props.flat
-    const title = `${currency} ${price} - ${name}`
+    const {priceCurrency, price, name, imageUrl} = this.props.flat
+    const title = `${priceCurrency} ${price} - ${name}`
 
     const imgStyle = {
       backgroundImage: `url('${imageUrl}')`
     }
     return (
-      <div className="flat">
+      <div className="Flat" onClick={this.handleFlatClick}>
         <div className="flat-picture" style={imgStyle}>
 
         </div>
